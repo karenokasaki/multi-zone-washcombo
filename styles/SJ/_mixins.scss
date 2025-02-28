@@ -1,0 +1,44 @@
+@mixin text-content($p-color: rgba(#1b1a1e, 0.87)) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  h4 {
+    order: -1;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 18px;
+    color: $p-color;
+    line-height: 1.33;
+  }
+}
+
+@mixin responsiveValue(
+  $property,
+  $px-value,
+  $transform: false,
+  $transform-val: translate
+) {
+  @if $transform {
+    transform: #{$transform-val }(#{$px-value / 16}vw);
+  } @else {
+    #{$property}: #{calc($px-value / 16)}vw;
+  }
+
+  @media all and (min-width: 1920px) {
+    @if $transform {
+      transform: #{$transform-val }(#{$px-value}px);
+    } @else {
+      #{$property}: #{$px-value}px;
+    }  
+  }
+}

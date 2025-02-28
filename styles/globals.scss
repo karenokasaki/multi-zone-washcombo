@@ -1,0 +1,13 @@
+@import "./LG/variables.scss";
+
+.washcombo-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+
+  @media screen and (max-width: #{$max-md}px) {
+    nav {
+      order: -1;
+    }
+  }
+}
