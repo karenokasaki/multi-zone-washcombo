@@ -15,6 +15,7 @@ const nextConfig = {
     });
     return config;
   },
+  assetPrefix: "/washcombo",
 };
 
 module.exports = nextConfig;
